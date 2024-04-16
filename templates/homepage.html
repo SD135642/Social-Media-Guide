@@ -1,1 +1,68 @@
-ii
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:,">
+
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://unpkg.com/treeflex/dist/css/treeflex.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+
+    <title>Homepage</title>
+
+
+</head>
+<body>
+    <h1>What do you want to learn today?</h1>
+    <div class="container">
+        <div class="tf-tree example">
+            <ul>
+                <li>
+                    <span class="tf-nc">Review The Basics</span>
+                    <ul>
+                        <li>
+                            <span class="tf-nc"><p><a href="/learning/1">Tailoring Content</a></p></span>
+                            <ul>
+                                <li><span class="tf-nc"><a href="/topic/1">Location</a></span></li>
+                                <li><span class="tf-nc"><a href="/topic/2">Niche</a></span></li>
+                                <li><span class="tf-nc"><a href="/topic/3">Age</a></span></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="tf-nc"><p><a href="/learning/2">Quality and Outreach</a></p></span>
+                            <ul>
+                                <li><span class="tf-nc"><a href="/topic/4">Consistency</a></span></li>
+                                <li><span class="tf-nc"><a href="/topic/5">Personal Engagement</a></span></li>
+                                <li><span class="tf-nc"><a href="/topic/6">Catchy Content</a></span></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="tf-nc"><p><a href="/learning/3">Fostering Engagement</a></p></span>
+                            <ul>
+                                <li><span class="tf-nc"><a href="/topic/7">Diversification</a></span></li>
+                                <li><span class="tf-nc"><a href="/topic/8">Trends and Quality</a></span></li>
+                                <li><span class="tf-nc"><a href="/topic/9">Collaboration</a></span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <button class="button" onclick="window.location.href='quiz.html'">Jump to Quiz</button>
+        <button class="button" onclick="window.location.href='content_plan.html'">See my content plan</button>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:,">
+
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="{{url_for('static', filename='learning.css')}}">
+
+    <title>Topics Page</title>
+
+
+</head>
+<body>
+
+    <h2>Title is {{ topic_overview.title }}</h2>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <p>{{ topic_overview.subtitle1 }}</p>
+            </div>
+            <div class="col-4">
+                <p>{{ topic_overview.subtitle2 }}</p>
+            </div>
+            <div class="col-4">
+                <p>{{ topic_overview.subtitle3 }}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <p>{{ topic_overview.image1 }}</p>
+            </div>
+            <div class="col-4">
+                <p>{{ topic_overview.image2 }}</p>
+            </div>
+            <div class="col-4">
+                <p>{{ topic_overview.image3 }}</p>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-4">
+                <form action="/topic/{{ topic_overview.subbranch }}{{ 1 }}" method="get">
+                    <button type="submit">Explore</button>
+                </form>
+            </div>
+            <div class="col-4">
+                <form action="/topic/{{ topic_overview.subbranch }}{{ 2 }}" method="get">
+                    <button type="submit">Explore</button>
+                </form>
+            </div>
+            <div class="col-4">
+                <form action="/topic/{{ topic_overview.subbranch }}{{ 3 }}" method="get">
+                    <button type="submit">Explore</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
