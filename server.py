@@ -45,7 +45,7 @@ topics = {
     "11":{
         "id": "11",
         "title": "Tailoring Content",
-        "text": "Compare these two images. What users are not going to look at these and follow these pages? Tap on the images to learn the answers.",
+        "text": "Compare these two images. What users are not going to look at and follow these pages? Tap on the images to learn the answers.",
         "image1": "",
         "image2": ""
     },

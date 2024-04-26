@@ -22,19 +22,50 @@
 
 </head>
 <body>
-<h2>{{ topic.title }} </h2>
-<p>{{ topic.text }}</p>
+<h1>{{ topic.title }} </h1>
+<p class="sedan-regular">{{ topic.text }}</p>
 <div class="container">
     <div class="row">
         <div class="col-6">
-            <p>{{ topic.image1 }}</p>
+            <div class="row">
+                <div class="flip-card" onmouseover="flipCard(true)" onmouseout="flipCard(false)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img class = "medium-image" src="/static/images/img2.png" alt="Image">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="sedan-regular">Revealed text</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-6">
-            <p>{{ topic.image2 }}</p>
+            <div class="row">
+                <div class="flip-card" onmouseover="flipCard(true)" onmouseout="flipCard(false)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img class = "medium-image" src="/static/images/img2.png" alt="Image">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="sedan-regular">Revealed text</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
 </div>
-
+<script>
+    function flipCard(isFlipped) {
+        var card = document.querySelector('.flip-card');
+        if (isFlipped) {
+            card.classList.add('flipped');
+        } else {
+            card.classList.remove('flipped');
+        }
+    }
+</script>
 </body>
 </html>
