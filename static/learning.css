@@ -1,0 +1,60 @@
+.small-image {
+    width: 100%; /* You can adjust the width as needed */
+    height: auto;
+}
+
+.container {
+    height: 80vh;
+    width: 100vw;
+    margin: 0;
+    padding: 15px;
+    max-width: 10000px;
+}
+
+h1 {
+    padding-top: 5%;
+    padding-bottom: 100px;
+    padding-left: 38%;
+    color: white;
+    font-size: 4em;
+}
+
+body {
+    background-color: black;
+}
+
+p.sedan-regular {
+    color: white;
+    font-size: 3em;
+    justify-self: center;
+    text-align: center;
+    padding-bottom: 3%;
+    font-family: "Sedan", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.sedan-regular {
+  font-family: "Sedan", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.custom-button {
+    background-color: rgb(246, 253, 251);
+    width: 50%;
+    height: 60px;
+    color: black;
+    font-family: "Sedan", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2em;
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer;
+    margin-left: 25%;
+    margin-top: 40px;
+}
+
+.custom-button:hover {
+    background-color: rgb(214, 216, 214); /* Lighter background color on hover */
+}

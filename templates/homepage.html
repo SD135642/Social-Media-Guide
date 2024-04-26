@@ -1,5 +1,6 @@
-<!doctype html>
-<html lang="en">
+{% extends "layout.html" %}
+
+{% block content %}
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -28,30 +29,30 @@
         <div class="tf-tree example">
             <ul>
                 <li>
-                    <span class="tf-nc">Review The Basics</span>
+                    <span class="tf-nc"><p class="sedan-regular">Review The Basics</p></span>
                     <ul>
                         <li>
-                            <span class="tf-nc"><p><a href="/learning/1">Tailoring Content</a></p></span>
+                            <span class="tf-nc"><p class="sedan-regular"><a href="/learning/1">Tailoring Content</a></p></span>
                             <ul>
-                                <li><span class="tf-nc"><a href="/topic/1">Location</a></span></li>
-                                <li><span class="tf-nc"><a href="/topic/2">Niche</a></span></li>
-                                <li><span class="tf-nc"><a href="/topic/3">Age</a></span></li>
+                                <li><span class="tf-nc"><p class="sedan-regular">&#9745;<a href="/topic/11">Location</a></p></span></li>
+                                <li><span class="tf-nc"><p class="sedan-regular">&#9745;<a href="/topic/12">Niche</a></p></span></li>
+                                <li><span class="tf-nc"><p class="sedan-regular">&#9745;<a href="/topic/13">Age</a></p></span></li>
                             </ul>
                         </li>
                         <li>
-                            <span class="tf-nc"><p><a href="/learning/2">Quality and Outreach</a></p></span>
+                            <span class="tf-nc"><p class="sedan-regular"><a href="/learning/2">Quality and Outreach</a></p></span>
                             <ul>
-                                <li><span class="tf-nc"><a href="/topic/4">Consistency</a></span></li>
-                                <li><span class="tf-nc"><a href="/topic/5">Personal Engagement</a></span></li>
-                                <li><span class="tf-nc"><a href="/topic/6">Catchy Content</a></span></li>
+                                <li><span class="tf-nc"><p class="sedan-regular">&#9745;<a href="/topic/21">Consistency</a></p></span></li>
+                                <li><span class="tf-nc"><p class="sedan-regular">&#9745;<a href="/topic/22">Personal Engagement</a></p></span></li>
+                                <li><span class="tf-nc"><p class="sedan-regular">&#9745;<a href="/topic/23">Catchy Content</a></p></span></li>
                             </ul>
                         </li>
                         <li>
-                            <span class="tf-nc"><p><a href="/learning/3">Fostering Engagement</a></p></span>
+                            <span class="tf-nc"><p class="sedan-regular"><a href="/learning/3">Fostering Engagement</a></p></span>
                             <ul>
-                                <li><span class="tf-nc"><a href="/topic/7">Diversification</a></span></li>
-                                <li><span class="tf-nc"><a href="/topic/8">Trends and Quality</a></span></li>
-                                <li><span class="tf-nc"><a href="/topic/9">Collaboration</a></span></li>
+                                <li><span class="tf-nc"><p class="sedan-regular">&#9745;<a href="/topic/31">Diversification</a></p></span></li>
+                                <li><span class="tf-nc"><p class="sedan-regular">&#9745;<a href="/topic/32">Trends and Quality</a></p></span></li>
+                                <li><span class="tf-nc"><p class="sedan-regular">&#9745;<a href="/topic/33">Collaboration</a></p></span></li>
                             </ul>
                         </li>
                     </ul>
@@ -59,10 +60,9 @@
             </ul>
         </div>
 
-        <button class="button" onclick="window.location.href='quiz.html'">Jump to Quiz</button>
-        <button class="button" onclick="window.location.href='content_plan.html'">See my content plan</button>
+        <button type="submit" class="custom-button" onclick="window.location.href='/quiz'">Jump to Quiz</button>
 
     </div>
 
 </body>
-</html>
+{% endblock %}

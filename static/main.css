@@ -1,10 +1,145 @@
 .example .tf-nc {
-  /* css here */
+    padding: 5px;
+    border-color: white;
+    color: white;
+    border-left: .0625em solid;
+
 }
-.tf-custom .tf-nc:before,
-.tf-custom .tf-nc:after {
-  /* css here */
+
+.tf-tree .tf-nc:before {
+    border-left: .0625em solid;
+
 }
-.tf-custom li li:before {
-  /* css here */
+
+.tf-tree li li:last-child:before {
+    left: auto;
+    max-width: calc(50% + .07em);
+    right: calc(51% - 0em);
 }
+
+.tf-tree li li:first-child:before {
+    left: calc(47% - .03125em);
+    max-width: calc(53% + .0625em);
+}
+
+body {
+    background-color: black;
+}
+
+.tf-tree.example ul li::before,
+.tf-tree.example ul li::after,
+.tf-tree.example ul li div {
+    border-color: white;
+    border-left: white;
+
+}
+
+/* Set the color of the lines connecting the nodes to white */
+.tf-tree.example ul li::before {
+    border-left: 1px solid white; /* Set border-left to create vertical line */
+    border-color: white;
+}
+
+.tf-tree.example ul li::after {
+    border-top: 1px solid white; /* Set border-top to create horizontal line */
+    border-color: white;
+}
+
+.check-mark {
+    color: grey; /* Grey color */
+}
+
+/* Styling for the check mark when the link is visited */
+a:visited .check-mark {
+    color: green; /* Green color */
+}
+
+.tf-tree {
+    overflow: auto;
+    width: 100%; /* Set width to 100% of parent container */
+    height: 60%;
+    color: white;
+    border-color: white;
+}
+.tf-tree.example ul li {
+    width: 100%; /* Set width to 100% of parent container */
+    height: 100%; /* Set height to 100% of parent container */
+    margin-bottom: 20px;
+    position: relative;
+    color: white;
+    border-color: white;
+    padding-left: 0;
+    padding-right: 16px;
+}
+
+.tf-tree.example ul li ul {
+    margin-top: 112px; /* Add space between parent and child elements */
+    color: white;
+    border-color: white;
+}
+
+.tf-tree .tf-nc:after {
+    border-left: .0625em solid #000;
+    display: block;
+    height: 6em;
+    position: absolute;
+    width: .0625em;
+    color: white;
+    border-color: white;
+}
+
+.container {
+    width: 100vw;
+    height: 95vh;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0; /* Center the container horizontally */
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding: 0;
+}
+
+.custom-button {
+    background-color: rgb(246, 253, 251);
+    width: 10%;
+    height: 60px;
+    color: black;
+    font-family: "Sedan", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2em;
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer;
+    margin-left: 45%;
+}
+
+.custom-button:hover {
+    background-color: rgb(214, 216, 214); /* Lighter background color on hover */
+}
+
+h1 {
+    color: white;
+    margin-top: 5%;
+    margin-bottom: 6%;
+    margin-left: 38%;
+    font-family: "Sedan", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+p.sedan-regular {
+    color: white;
+    font-size: 2em;
+    font-family: "Sedan", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.sedan-regular {
+  font-family: "Sedan", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+

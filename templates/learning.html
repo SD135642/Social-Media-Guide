@@ -17,36 +17,39 @@
 
     <link rel="stylesheet" href="{{url_for('static', filename='learning.css')}}">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Sedan:ital@0;1&display=swap" rel="stylesheet">
+
     <title>Topics Page</title>
 
 
 </head>
 <body>
-
-    <h2>Title is {{ topic_overview.title }}</h2>
+    <h1 class="sedan-regular">{{ topic_overview.title }}</h1>
 
     <div class="container">
         <div class="row">
             <div class="col-4">
-                <p>{{ topic_overview.subtitle1 }}</p>
+                <p class="sedan-regular">{{ topic_overview.subtitle1 }}</p>
             </div>
             <div class="col-4">
-                <p>{{ topic_overview.subtitle2 }}</p>
+                <p class="sedan-regular">{{ topic_overview.subtitle2 }}</p>
             </div>
             <div class="col-4">
-                <p>{{ topic_overview.subtitle3 }}</p>
+                <p class="sedan-regular">{{ topic_overview.subtitle3 }}</p>
             </div>
         </div>
 
         <div class="row">
             <div class="col-4">
-                <p>{{ topic_overview.image1 }}</p>
+                <img class="small-image" src="{{ topic_overview.image1 }}" alt="Your Image">
             </div>
             <div class="col-4">
-                <p>{{ topic_overview.image2 }}</p>
+                <img class="small-image" src="{{ topic_overview.image2 }}" alt="Your Image">
             </div>
             <div class="col-4">
-                <p>{{ topic_overview.image3 }}</p>
+                <img class="small-image" src="{{ topic_overview.image3 }}" alt="Your Image">
             </div>
         </div>
 
@@ -56,17 +59,17 @@
         <div class="row">
             <div class="col-4">
                 <form action="/topic/{{ topic_overview.subbranch }}{{ 1 }}" method="get">
-                    <button type="submit">Explore</button>
+                    <button type="submit" class="custom-button">Explore</button>
                 </form>
             </div>
             <div class="col-4">
                 <form action="/topic/{{ topic_overview.subbranch }}{{ 2 }}" method="get">
-                    <button type="submit">Explore</button>
+                    <button type="submit" class="custom-button">Explore</button>
                 </form>
             </div>
             <div class="col-4">
                 <form action="/topic/{{ topic_overview.subbranch }}{{ 3 }}" method="get">
-                    <button type="submit">Explore</button>
+                    <button type="submit" class="custom-button">Explore</button>
                 </form>
             </div>
         </div>
