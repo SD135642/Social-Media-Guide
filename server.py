@@ -19,10 +19,10 @@ topic_overviews = {
     "2":{
         "id": "2",
         "subbranch": 2,
-        "title": "Personal Engagement",
-        "subtitle1": "Catchy Content",
-        "subtitle2": "Consistency",
-        "subtitle3": "Age",
+        "title": "Quality and Outreach",
+        "subtitle1": "Consistency",
+        "subtitle2": "Personal Engagement",
+        "subtitle3": "Catchy Content",
         "image1": "/static/images/img4.png",
         "image2": "/static/images/img5.png",
         "image3": "/static/images/img6.png"
@@ -34,9 +34,9 @@ topic_overviews = {
         "subtitle1": "Diversification",
         "subtitle2": "Trends and Quality",
         "subtitle3": "Collaboration",
-        "image1": "/static/images/img3.png",
-        "image2": "",
-        "image3": ""
+        "image1": "/static/images/img7.png",
+        "image2": "/static/images/img8.png",
+        "image3": "/static/images/img9.png"
 
     }
 }
@@ -151,6 +151,10 @@ def display_learning(id=None):
         topic_overview = topic_overviews[id]
         return render_template('learning.html', topic_overview=topic_overview, id=id)
 
+
+@app.route('/final')
+def final_page():
+    return render_template('final.html')
 
 
 @app.route('/topic/<id>')

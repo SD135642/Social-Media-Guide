@@ -26,9 +26,113 @@
 
 </head>
 <body>
-    <h1 class="sedan-regular">{{ topic_overview.title }}</h1>
+
+    <script>
+        $(document).ready(function() {
+            // Create a new button element
+            var button1 = $("<button1>");
+            var button2 = $("<button2>");
+
+
+            // Set button attributes and content
+            var id = {{ id }};
+            if (id == 1) {
+                button1.html("Home"); // Button text
+                button2.html("Next Topic"); // Button text
+            } else if (id == 3) {
+                button1.html("Back"); // Button text
+                button2.html("Quiz"); // Button text
+            } else {
+                button1.html("Back"); // Button text
+                button2.html("Next Topic"); // Button text
+            }
+
+
+
+            button1.css({
+                "background-color": "white",
+                "color": "black",
+                "border-radius": "25px 0 0 25px",
+                "font-family": '"Sedan", serif',
+                "font-weight": "400",
+                "font-style": "normal",
+                "font-size": "2em",
+                "cursor": "pointer",
+                "padding": "8px 110px 8px 110px",
+                "width": "120%",
+                "border-radius": "25px 0 0 25px",
+                "text-align": "center"
+            });
+
+            button1.hover(function() {
+                $(this).css("background-color", "rgb(171, 171, 171)");
+            }, function() {
+                $(this).css("background-color", "white");
+            });
+
+
+            button2.css({
+                "background-color": "white",
+                "color": "black",
+                "border-radius": "0 25px 25px 0",
+                "font-family": '"Sedan", serif',
+                "font-weight": "400",
+                "font-style": "normal",
+                "font-size": "2em",
+                "cursor": "pointer",
+                "padding": "6px 50px 6px 50px",
+                "width": "70%",
+                "text-align": "center",
+                "display": "inline-block"
+            });
+
+
+            button2.hover(function() {
+                $(this).css("background-color", "rgb(171, 171, 171)");
+            }, function() {
+                $(this).css("background-color", "white");
+            });
+
+            button1.attr("onclick", "goBackLink()"); // Button click event
+            button2.attr("onclick", "goForwardLink()"); // Button click event
+
+            // Append the button to the html button
+            $("#back-button").append(button1);
+            $("#next-button").append(button2);
+        });
+
+        function goBackLink() {
+            // Get the id value (assuming it's passed from the server)
+            var id = {{ id }};
+            id = id - 1;
+            // Redirect to the link "/learning/{{ id }}"
+            window.location.href = "/learning/" + id;
+        }
+
+        function goForwardLink() {
+            // Get the id value (assuming it's passed from the server)
+            var id = {{ id }};
+            id = id + 1;
+            // Redirect to the link "/learning/{{ id }}"
+            window.location.href = "/learning/" + id;
+        }
+    </script>
 
     <div class="container">
+        <div class="row">
+            <a href="/"><div id="home-icon">Home &#8962;</div></a>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div id="back-button"></div>
+            </div>
+            <div class="col-6">
+                <h1 class="sedan-regular">{{ topic_overview.title }}</h1>
+            </div>
+            <div class="col-3">
+                <div id="next-button"></div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-4">
                 <p class="sedan-regular">{{ topic_overview.subtitle1 }}</p>
@@ -53,9 +157,6 @@
             </div>
         </div>
 
-
-
-
         <div class="row">
             <div class="col-4">
                 <form action="/topic/{{ topic_overview.subbranch }}{{ 1 }}" method="get">
@@ -74,6 +175,10 @@
             </div>
         </div>
     </div>
+
+
+
+
 
 
 </body>

@@ -22,19 +22,100 @@
 
 </head>
 <body>
-<h1>{{ topic.title }} </h1>
-<p class="sedan-regular">{{ topic.text }}</p>
+    <script>
+        var id = {{ id }};
+        $(document).ready(function() {
+            // Create a new button element
+            var button1 = $("<button1>");
+            var button2 = $("<button2>");
+
+            console.log("Id is : " + id);
+            console.log("Type is : " + typeof(id));
+
+
+            // Set button attributes and content
+            button1.html("Back"); // Button text
+            button2.html("Next"); // Button text
+
+            button1.attr("onclick", "goBackLink()"); // Button click event
+            button2.attr("onclick", "goForwardLink()"); // Button click event
+
+            button1.css({
+                "background-color": "white",
+                "color": "black",
+                "border-radius": "25px 0 0 25px",
+                "font-family": '"Sedan", serif',
+                "font-weight": "400",
+                "font-style": "normal",
+                "font-size": "2em",
+                "padding": "6px 110px 6px 110px"
+            });
+
+            button2.css({
+                "background-color": "white",
+                "color": "black",
+                "border-radius": "0 25px 25px 0",
+                "font-family": '"Sedan", serif',
+                "font-weight": "400",
+                "font-style": "normal",
+                "font-size": "2em",
+                "padding": "6px 110px 6px 110px"
+            });
+
+
+            // Append the button to the html button
+            $("#back-button").append(button1);
+            $("#next-button").append(button2);
+        });
+
+        function goBackLink() {
+            if (id == 31) {
+                id = 23
+                window.location.href = "/topic/" + id;
+            } else if (id == 21) {
+                id = 13;
+                window.location.href = "/topic/" + id;
+            } else if (id == 11) {
+                window.location.href = "/";
+            } else {
+                id -= 1;
+                window.location.href = "/topic/" + id;
+            }
+        }
+
+        function goForwardLink() {
+            if (id == 33) {
+               window.location.href = "/final";
+            } else if (id == 23) {
+                id = 31;
+               window.location.href = "/topic/" + id;
+            } else if (id == 13) {
+                id = 21
+                window.location.href = "/topic/" + id;
+            } else {
+                id += 1;
+                window.location.href = "/topic/" + id;
+            }
+        }
+    </script>
+
+
 <div class="container">
+    <div class="row">
+        <a href="/"><div id="home-icon">Home &#8962;</div></a>
+    </div>
+    <h1>{{ topic.title }} </h1>
+    <p class="sedan-regular">{{ topic.text }}</p>
     <div class="row">
         <div class="col-6">
             <div class="row">
-                <div class="flip-card" onmouseover="flipCard(true)" onmouseout="flipCard(false)">
+                <div class="flip-card" onmouseover="flipCard(this, true)" onmouseout="flipCard(this, false)">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img class = "medium-image" src="/static/images/img2.png" alt="Image">
+                            <img class="medium-image" src="/static/images/img1.png" alt="Image 1">
                         </div>
                         <div class="flip-card-back">
-                            <p class="sedan-regular">Revealed text</p>
+                            <p class="sedan-regular">Revealed text 1</p>
                         </div>
                     </div>
                 </div>
@@ -42,24 +123,31 @@
         </div>
         <div class="col-6">
             <div class="row">
-                <div class="flip-card" onmouseover="flipCard(true)" onmouseout="flipCard(false)">
+                <div class="flip-card" onmouseover="flipCard(this, true)" onmouseout="flipCard(this, false)">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img class = "medium-image" src="/static/images/img2.png" alt="Image">
+                            <img class="medium-image" src="/static/images/img2.png" alt="Image 2">
                         </div>
                         <div class="flip-card-back">
-                            <p class="sedan-regular">Revealed text</p>
+                            <p class="sedan-regular">Revealed text 2</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <div class="row">
+        <div class="col-6">
+            <div id="back-button"></div>
+        </div>
+        <div class="col-6">
+            <div id="next-button"></div>
+        </div>
+    </div>
 </div>
+
 <script>
-    function flipCard(isFlipped) {
-        var card = document.querySelector('.flip-card');
+    function flipCard(card, isFlipped) {
         if (isFlipped) {
             card.classList.add('flipped');
         } else {
@@ -67,5 +155,6 @@
         }
     }
 </script>
+
 </body>
 </html>
