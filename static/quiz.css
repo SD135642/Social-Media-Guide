@@ -1,0 +1,65 @@
+body {
+    background-color: black;
+}
+
+p.sedan-regular {
+    color: white;
+    font-size: 2em;
+    text-align: left;
+    padding: 2%;
+    font-family: "Sedan", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.sedan-regular {
+    font-family: "Sedan", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: balck;
+    border: 4px solid white;
+    text-align: center;
+    line-height: 100px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.box.correct {
+    background-color: lightgreen;
+}
+
+#next-button {
+    margin-top: 180px;
+    margin-left: 60%;
+}
+
+#back-button {
+    margin-top: 180px;
+    margin-left: 100px;
+}
+
+#home-icon {
+    font-family: "Sedan", serif;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 2em;
+    margin-left: 30px;
+}
+
+.box.incorrect {
+    background-color: lightcoral;
+}
+
+col-6 {
+    display: inline-block;
+}
+
+.large-image {
+    width: 100%;
+    height: auto;
+}
+

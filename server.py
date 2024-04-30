@@ -107,9 +107,30 @@ topics = {
     }
 }
 
+quiz_info = {
+    "4":{
+        "image" : "",
+    },
+    "5":{
+        "image" : "",
+    },
+    "6":{
+        "image" : ""
+    },
+    "7": {
+        "name": "",
+        "bio": "",
+        "profile_pic": "",
+        "channel1": "",
+        "channel2": "",
+        "channel3": "",
+        "channel4": "",
+        "channel5": ""
+    }
+}
+
 
 # ROUTES
-
 
 @app.route('/')
 def homepage():
@@ -118,16 +139,25 @@ def homepage():
 
 @app.route('/learning/<id>')
 def display_learning(id=None):
-    global topic_overviews
-    topic_overview = topic_overviews[id]
-    return render_template('learning.html', topic_overview=topic_overview)
+    int_id = int(id)
+    if int_id > 3:
+        global quiz_info
+        this_quiz_info = quiz_info[id]
+        return render_template('quiz.html', id = id, this_quiz_info=this_quiz_info)
+    elif int_id < 1:
+        return render_template('homepage.html')
+    else:
+        global topic_overviews
+        topic_overview = topic_overviews[id]
+        return render_template('learning.html', topic_overview=topic_overview, id=id)
+
+
 
 @app.route('/topic/<id>')
 def display_topic(id=None):
     global topics
-    print("Here is the id: " + id)
     topic = topics[id]
-    return render_template('topic.html', topic=topic)
+    return render_template('topic.html', topic=topic, id=id)
 
 @app.route('/quiz')
 def quiz():
@@ -135,7 +165,5 @@ def quiz():
 
 
 
-
-
 if __name__ == '__main__':
-   app.run(debug = True)
+   app.run(debug = True, port=5001)

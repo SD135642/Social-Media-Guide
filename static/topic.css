@@ -1,24 +1,23 @@
 .medium-image {
-    width: 300%; /* You can adjust the width as needed */
+    width: 450%; /* You can adjust the width as needed */
     height: auto;
+    justify-self: center;
 
 }
 h1 {
-    padding-top: 5%;
-    padding-bottom: 50px;
+    padding-top: 4%;
+    padding-bottom: 1%;
     padding-left: 38%;
     color: white;
     font-size: 4em;
 }
-
-
 
 body {
     background-color: black;
 }
 
 .container {
-    height: 80vh;
+    height: 70vh;
     width: 100vw;
     margin: 0;
     padding: 15px;
@@ -29,7 +28,7 @@ p.sedan-regular {
     color: white;
     font-size: 2em;
     text-align: left;
-    padding: 3%;
+    padding: 2%;
     font-family: "Sedan", serif;
     font-weight: 400;
     font-style: normal;
