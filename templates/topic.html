@@ -112,10 +112,12 @@
                 <div class="flip-card" onmouseover="flipCard(this, true)" onmouseout="flipCard(this, false)">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img class="medium-image" src="/static/images/img1.png" alt="Image 1">
+                            <img class="medium-image" src="{{ topic.image1 }}" alt="Image 1">
                         </div>
                         <div class="flip-card-back">
-                            <p class="sedan-regular">Revealed text 1</p>
+                            <div class="container-custom">
+                                <p class="sedan-regular">{{ topic.img_text1 }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -126,16 +128,19 @@
                 <div class="flip-card" onmouseover="flipCard(this, true)" onmouseout="flipCard(this, false)">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img class="medium-image" src="/static/images/img2.png" alt="Image 2">
+                            <img class="medium-image" src="{{ topic.image2 }}" alt="Image 2">
                         </div>
                         <div class="flip-card-back">
-                            <p class="sedan-regular">Revealed text 2</p>
+                            <div class="container-custom">
+                                <p class="sedan-regular">{{ topic.img_text2 }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="row">
         <div class="col-6">
             <div id="back-button"></div>

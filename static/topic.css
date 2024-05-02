@@ -1,12 +1,14 @@
 .medium-image {
-    width: 450%; /* You can adjust the width as needed */
+    width: 500%; /* You can adjust the width as needed */
     height: auto;
+    max-height: 700px;
     justify-self: center;
+    margin-left: 40px;
 
 }
 h1 {
-    padding-top: 4%;
-    padding-bottom: 1%;
+    padding-top: 1%;
+    padding-bottom: 0;
     padding-left: 38%;
     color: white;
     font-size: 4em;
@@ -16,8 +18,15 @@ body {
     background-color: black;
 }
 
+.container-custom {
+    width: 1000px;
+    text-align: center;
+    padding-left: 10px;
+
+}
+
 .container {
-    height: 70vh;
+    height: 80vh;
     width: 100vw;
     margin: 0;
     padding: 15px;
@@ -74,12 +83,12 @@ p.sedan-regular {
 }
 
 #next-button {
-    margin-top: 42%;
+    margin-top: 55%;
     margin-left: 60%;
 }
 
 #back-button {
-    margin-top: 42%;
+    margin-top: 55%;
     margin-left: 100px;
 }
 

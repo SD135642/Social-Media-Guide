@@ -46,64 +46,70 @@ topics = {
         "id": "11",
         "title": "Tailoring Content",
         "text": "Compare these two images. What users are not going to look at and follow these pages? Tap on the images to learn the answers.",
-        "image1": "",
-        "image2": ""
+        "image1": "/static/images/img10.png",
+        "image2": "/static/images/img11.png",
+        "img_text1": "People from outside California are less likely to follow this page, followed by people from other countries. However, the coverage of this post is large since the Golden Gate bridge is a famous tourist attraction, so there might still be a number of followers from other countries.",
+        "img_text2": "Only people who speak Korean will follow this page, meaning that the main audience will be located in South Korea or the United States. The coverage of this post is very limited."
     },
     "12":{
         "id": "12",
         "title": "Tailoring Content",
         "text": "Compare these two images. What users are not going to look at these and follow these pages? Tap on the images to learn the answers.",
-        "image1": "",
-        "image2": ""
+        "image1": "/static/images/img12.png",
+        "image2": "/static/images/img15.png",
+        "img_text1": "",
+        "img_text2": ""
     },
     "13":{
         "id": "13",
         "title": "Tailoring Content",
         "text": "Compare these two images. What users are not going to look at these and follow these pages? Tap on the images to learn the answers.",
-        "image1": "",
-        "image2": ""
+        "image1": "/static/images/img14.png",
+        "image2": "/static/images/img13.png",
+        "img_text1": "",
+        "img_text2": ""
     },
     "21":{
         "id": "21",
         "title": "Quality and Outreach",
         "text": "Text",
-        "image1": "",
-        "image2": ""
+        "image1": "/static/images/img16.png",
+        "image2": "/static/images/img18.png",
     },
     "22":{
         "id": "22",
         "title": "Quality and Outreach",
         "text": "Text",
-        "image1": "",
-        "image2": ""
+        "image1": "/static/images/img17.png",
+        "image2": "/static/images/img19.png"
     },
     "23":{
         "id": "23",
         "title": "Quality and Outreach",
         "text": "Text",
-        "image1": "",
-        "image2": ""
+        "image1": "/static/images/img17.png",
+        "image2": "/static/images/img17.png"
     },
     "31":{
         "id": "31",
         "title": "Fostering Engagement",
         "text": "Compare these two images. What do these kinds of engagement help the creator with? What would their followers think? Tap on the images to learn the answers.",
-        "image1": "",
-        "image2": ""
+        "image1": "/static/images/img16.png",
+        "image2": "/static/images/img17.png"
     },
     "32":{
         "id": "32",
         "title": "Fostering Engagement",
         "text": "Compare these two images. What do these posts imply that draws the viewer's’ attention? Tap on the images to learn the answers.",
-        "image1": "",
-        "image2": ""
+        "image1": "/static/images/img18.png",
+        "image2": "/static/images/img19.png"
     },
     "33":{
         "id": "33",
         "title": "Fostering Engagement",
         "text": "Look at these two images. What category does your account fall into? Choose and click on the right category on the left image. Do you have a content plan similar to the image on the right?",
-        "image1": "",
-        "image2": ""
+        "image1": "/static/images/img13.png",
+        "image2": "/static/images/img13.png"
     }
 }
 
@@ -143,7 +149,7 @@ def display_learning(id=None):
     if int_id > 3:
         global quiz_info
         this_quiz_info = quiz_info[id]
-        return render_template('quiz.html', id = id, this_quiz_info=this_quiz_info)
+        return render_template('quiz.html', id = id, quiz_info=this_quiz_info)
     elif int_id < 1:
         return render_template('homepage.html')
     else:
@@ -163,9 +169,11 @@ def display_topic(id=None):
     topic = topics[id]
     return render_template('topic.html', topic=topic, id=id)
 
-@app.route('/quiz')
-def quiz():
-    return render_template('quiz.html')
+@app.route('/quiz/<id>')
+def quiz(id=None):
+    global quiz_info
+    this_quiz_info = quiz_info[id]
+    return render_template('quiz.html', id = id, quiz_info=this_quiz_info)
 
 
 
