@@ -29,13 +29,20 @@
             var button1 = $("<button1>");
             var button2 = $("<button2>");
 
-            console.log("Id is : " + id);
-            console.log("Type is : " + typeof(id));
-
 
             // Set button attributes and content
             button1.html("Back"); // Button text
-            button2.html("Next"); // Button text
+            if (id == 33) {
+                button2.html("Quiz"); // Button text
+            } else {
+                button2.html("Next"); // Button text
+            }
+            if (id == 11) {
+                button1.html("Home"); // Button text
+            } else {
+                button1.html("Back"); // Button text
+            }
+
 
             button1.attr("onclick", "goBackLink()"); // Button click event
             button2.attr("onclick", "goForwardLink()"); // Button click event
@@ -85,7 +92,7 @@
 
         function goForwardLink() {
             if (id == 33) {
-               window.location.href = "/final";
+               window.location.href = "/quiz/intro/4";
             } else if (id == 23) {
                 id = 31;
                window.location.href = "/topic/" + id;

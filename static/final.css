@@ -1,0 +1,49 @@
+h1 {
+    color: white;
+    margin-top: 5%;
+    margin-bottom: 6%;
+    margin-left: 5%;
+    font-family: "Sedan", serif;
+    font-weight: 400;
+    font-style: normal;
+    justify-content: center;
+}
+
+
+p.sedan-regular {
+    color: white;
+    font-size: 2em;
+    font-family: "Sedan", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+body {
+    background-color: black;
+}
+
+.sedan-regular {
+  font-family: "Sedan", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.custom-button {
+    background-color: rgb(246, 253, 251);
+    width: 10%;
+    height: 60px;
+    color: black;
+    font-family: "Sedan", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2em;
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer;
+    margin-left: 45%;
+}
+
+.custom-button:hover {
+    background-color: rgb(214, 216, 214); /* Lighter background color on hover */
+}

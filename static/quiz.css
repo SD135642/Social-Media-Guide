@@ -33,13 +33,13 @@ p.sedan-regular {
 }
 
 #next-button {
-    margin-top: 180px;
+    margin-top: 40px;
     margin-left: 60%;
 }
 
 #back-button {
-    margin-top: 180px;
-    margin-left: 100px;
+    margin-top: 50px;
+    margin-left: 80px;
 }
 
 #home-icon {
@@ -60,6 +60,15 @@ col-6 {
 
 .large-image {
     width: 100%;
+    max-width: 1300px;
     height: auto;
+    max-height: 1000px;
 }
 
+.col-4 {
+    margin-top: 100px;
+}
+
+.row {
+    margin-bottom: 15px;
+}

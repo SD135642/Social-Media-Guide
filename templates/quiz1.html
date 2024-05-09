@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:,">
+
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="{{url_for('static', filename='quiz.css')}}">
+
+    <title>Quiz</title>
+
+
+</head>
+<body>
+<script>
+        let correctAnswers = 0;
+        $(document).ready(function() {
+            // Create a new button element
+            var button1 = $("<button1>");
+            var button2 = $("<button2>");
+
+            // Set button attributes and content
+            button1.html("Back"); // Button text
+            button2.html("Next"); // Button text
+
+            button1.attr("onclick", "goBackLink()"); // Button click event
+            button2.attr("onclick", "goForwardLink()"); // Button click event
+
+            button1.css({
+                "background-color": "white",
+                "color": "black",
+                "border-radius": "25px 0 0 25px",
+                "font-family": '"Sedan", serif',
+                "font-weight": "400",
+                "font-style": "normal",
+                "font-size": "2em",
+                "padding": "6px 110px 6px 110px"
+            });
+
+            button2.css({
+                "background-color": "white",
+                "color": "black",
+                "border-radius": "0 25px 25px 0",
+                "font-family": '"Sedan", serif',
+                "font-weight": "400",
+                "font-style": "normal",
+                "font-size": "2em",
+                "padding": "6px 110px 6px 110px"
+            });
+
+
+            // Append the button to the html button
+            $("#back-button").append(button1);
+            $("#next-button").append(button2);
+        });
+
+        function goBackLink() {
+                // Get the id value (assuming it's passed from the server)
+                var id = {{ id }};
+                id = id - 1;
+                // Redirect to the link "/learning/{{ id }}"
+                window.location.href = "/learning/" + id;
+        }
+
+        function goForwardLink() {
+            // Get the id value (assuming it's passed from the server)
+            if (correctAnswers == 3) {
+                var id = {{ id }};
+                id = id + 1;
+                // Redirect to the link "/learning/{{ id }}"
+                window.location.href = "/learning/" + id;
+            } else {
+                window.alert("There are more correct answers. Please try again!");
+            }
+        }
+
+        function checkAnswer(element, isCorrect) {
+        if (isCorrect) {
+            element.classList.add('correct');
+            element.innerHTML = '&#10004;'; // Checkmark symbol
+            correctAnswers +=1;
+        } else {
+            element.classList.add('incorrect');
+            element.innerHTML = '&#10008;'; // Cross symbol
+            setTimeout(function() {
+                element.classList.remove('incorrect');
+                element.innerHTML = ''; // Remove the cross
+            }, 2000);
+        }
+    }
+
+    </script>
+<div class="row">
+    <div class="col-8">
+        <div class="row">
+            <a href="/"><div id="home-icon">Home &#8962;</div></a>
+        </div>
+        <img class="large-image" src="{{ quiz_info.image }}" alt="Your Image">
+    </div>
+    <div class="col-4">
+        <div class="row">
+            <div class="box" onclick="checkAnswer(this, true)"></div><p class="sedan-regular">Create a catchy username and profile</p> <br>
+        </div>
+        <div class="row">
+            <div class="box" onclick="checkAnswer(this, false)"></div><p class="sedan-regular">Find your unique niche</p>  <br>
+        </div>
+        <div class="row">
+            <div class="box" onclick="checkAnswer(this, true)"></div><p class="sedan-regular">Ensure the high quality of your content</p>  <br>
+        </div>
+        <div class="row">
+            <div class="box" onclick="checkAnswer(this, false)"></div><p class="sedan-regular">Consider your location</p>  <br>
+        </div>
+        <div class="row">
+            <div class="box" onclick="checkAnswer(this, true)"></div><p class="sedan-regular">Diversify your content</p>  <br>
+        </div>
+        <div class="row">
+            <div class="box" onclick="checkAnswer(this, false)"></div><p class="sedan-regular">Engage personally</p>  <br>
+        </div>
+        <div class="row">
+            <div class="box" onclick="checkAnswer(this, false)"></div><p class="sedan-regular">Collaborate with brands and influencers</p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div id="back-button"></div>
+    </div>
+    <div class="col-6">
+        <div id="next-button"></div>
+    </div>
+</div>
+</body>
+</html>

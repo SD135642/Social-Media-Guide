@@ -1,7 +1,6 @@
 .medium-image {
-    width: 500%; /* You can adjust the width as needed */
-    height: auto;
-    max-height: 700px;
+    width: 500%;
+    height: 700px;
     justify-self: center;
     margin-left: 40px;
 
@@ -9,7 +8,7 @@
 h1 {
     padding-top: 1%;
     padding-bottom: 0;
-    padding-left: 38%;
+    text-align: center; /* Center text within the element */
     color: white;
     font-size: 4em;
 }

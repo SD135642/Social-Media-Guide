@@ -13,12 +13,12 @@
 
 .tf-tree li li:last-child:before {
     left: auto;
-    max-width: calc(50% + .07em);
-    right: calc(51% - 0em);
+    max-width: calc(60% + .9em);
+    right: calc(50% - 0em);
 }
 
 .tf-tree li li:first-child:before {
-    left: calc(47% - .03125em);
+    left: calc(50% - .03125em);
     max-width: calc(53% + .0625em);
 }
 
@@ -68,8 +68,8 @@ a:visited .check-mark {
     position: relative;
     color: white;
     border-color: white;
-    padding-left: 0;
-    padding-right: 16px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .tf-tree.example ul li ul {
@@ -97,6 +97,7 @@ a:visited .check-mark {
     box-sizing: border-box;
     overflow-x: hidden;
     padding: 0;
+    padding-left: 100px;
 }
 
 .custom-button {
@@ -110,7 +111,7 @@ a:visited .check-mark {
     font-size: 2em;
     border-radius: 10px; /* Rounded corners */
     cursor: pointer;
-    margin-left: 45%;
+    margin-left: 43%;
 }
 
 .custom-button:hover {

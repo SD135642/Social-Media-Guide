@@ -1,0 +1,93 @@
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:,">
+
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://unpkg.com/treeflex/dist/css/treeflex.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="{{url_for('static', filename='quiz_intro.css')}}">
+
+    <title>Quiz intro</title>
+
+
+</head>
+<body>
+
+<script>
+$(document).ready(function() {
+    // Create a new button element
+    var button1 = $("<button1>");
+    var button2 = $("<button2>");
+
+    // Set button attributes and content
+    button1.html("Review more"); // Button text
+    button2.html("Quiz!"); // Button text
+
+    button1.attr("onclick", "goBackLink()"); // Button click event
+    button2.attr("onclick", "goForwardLink()"); // Button click event
+
+    button1.css({
+        "background-color": "white",
+        "color": "black",
+        "border-radius": "25px 0 0 25px",
+        "font-family": '"Sedan", serif',
+        "font-weight": "400",
+        "font-style": "normal",
+        "font-size": "2em",
+        "padding": "10px 120px 10px 120px"
+    });
+
+    button2.css({
+        "background-color": "white",
+        "color": "black",
+        "border-radius": "0 25px 25px 0",
+        "font-family": '"Sedan", serif',
+        "font-weight": "400",
+        "font-style": "normal",
+        "font-size": "2em",
+        "padding": "10px 160px 10px 160px"
+    });
+
+
+    // Append the button to the html button
+    $("#back-button").append(button1);
+    $("#next-button").append(button2);
+});
+
+    function goBackLink() {
+            // Get the id value (assuming it's passed from the server)
+            var id = {{ id }};
+            id = id - 1;
+            // Redirect to the link "/learning/{{ id }}"
+            window.location.href = "/learning/" + id;
+    }
+
+    function goForwardLink() {
+        // Get the id value (assuming it's passed from the server)
+        var id = {{ id }};
+        // Redirect to the link "/learning/{{ id }}"
+        window.location.href = "/learning/" + id;
+    }
+
+    </script>
+
+<h1 class="sedan-regular">Congratulations! You finished the guide and now it's time for the quiz. For the next 5 pages, look at the Instagram pages presented to you and <strong>give advice</strong> to those creators based on what you learned.</h1>
+<div class="row">
+    <div class="col-6">
+        <div id="back-button"></div>
+    </div>
+    <div class="col-6">
+        <div id="next-button"></div>
+    </div>
+</div>
+
+</body>

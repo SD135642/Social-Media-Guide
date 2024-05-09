@@ -112,9 +112,13 @@
         function goForwardLink() {
             // Get the id value (assuming it's passed from the server)
             var id = {{ id }};
-            id = id + 1;
-            // Redirect to the link "/learning/{{ id }}"
-            window.location.href = "/learning/" + id;
+            if (id == 3) {
+                window.location.href = "/quiz/intro/4";
+            } else {
+                id = id + 1;
+                // Redirect to the link "/learning/{{ id }}"
+                window.location.href = "/learning/" + id;
+            }
         }
     </script>
 

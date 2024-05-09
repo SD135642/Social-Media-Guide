@@ -74,13 +74,13 @@
 
         function goForwardLink() {
             // Get the id value (assuming it's passed from the server)
-            if (correctAnswers == 4) {
+            if (correctAnswers == 5) {
                 var id = {{ id }};
                 id = id + 1;
                 // Redirect to the link "/learning/{{ id }}"
                 window.location.href = "/learning/" + id;
             } else {
-                console.log("Need more right answers!!");
+                window.alert("There are more correct answers. Please try again!");
             }
         }
 
@@ -115,16 +115,16 @@
                 <div class="box" onclick="checkAnswer(this, false)"></div><p class="sedan-regular">Find your unique niche</p>  <br>
             </div>
             <div class="row">
-                <div class="box" onclick="checkAnswer(this, false)"></div><p class="sedan-regular">Ensure the high quality of your content</p>  <br>
+                <div class="box" onclick="checkAnswer(this, true)"></div><p class="sedan-regular">Ensure the high quality of your content</p>  <br>
             </div>
             <div class="row">
-                <div class="box" onclick="checkAnswer(this, false)"></div><p class="sedan-regular">Consider your location</p>  <br>
+                <div class="box" onclick="checkAnswer(this, true)"></div><p class="sedan-regular">Consider your location</p>  <br>
             </div>
             <div class="row">
                 <div class="box" onclick="checkAnswer(this, true)"></div><p class="sedan-regular">Diversify your content</p>  <br>
             </div>
             <div class="row">
-                <div class="box" onclick="checkAnswer(this, true)"></div><p class="sedan-regular">Engage personally</p>  <br>
+                <div class="box" onclick="checkAnswer(this, false)"></div><p class="sedan-regular">Engage personally</p>  <br>
             </div>
             <div class="row">
                 <div class="box" onclick="checkAnswer(this, true)"></div><p class="sedan-regular">Collaborate with brands and influencers</p>
